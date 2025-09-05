@@ -11,10 +11,3 @@ namespace QuizApi.Models
         public int CorrectAnswer { get; set; } // índice da resposta correta
     }
 }
-
-
-{
-
-   
-
-}
