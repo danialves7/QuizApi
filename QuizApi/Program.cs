@@ -5,10 +5,15 @@ using QuizApi.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 // DB InMemory
-builder.Services.AddDbContext<QuizDb>(opt => opt.UseInMemoryDatabase("QuizDb"));
+//builder.Services.AddDbContext<QuizDb>(opt => opt.UseInMemoryDatabase("QuizDb"));
+
+// DB SQL Server
+builder.Services.AddDbContext<QuizDb>(opt => 
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // Services
 builder.Services.AddScoped<QuestionService>();
+
 
 // Controllers + Swagger
 builder.Services.AddControllers();
