@@ -8,4 +8,5 @@ public class QuizDb : DbContext
     public QuizDb(DbContextOptions<QuizDb> options) : base(options) { }
 
     public DbSet<Question> Questions { get; set; } = null!;
+    public DbSet<Option> Options { get; set; } = null!;
 }
